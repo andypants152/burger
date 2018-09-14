@@ -1,7 +1,48 @@
-<h1>Burgers!</h1>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="text-center">Burger Time!</h1>
+        <br>
+        <div class="text-center">
+            <label>Add a burger</label>
+            <input type="text" id="newBurger" name="name">
+            <div class="text-right">
+                <button class="btn btn-lg btn-primary mt-2" id="addBurger">Add!</button>
+            </div>
+        </div>
+    </div>
 
-<ul>
-    {{#each burgers}}
-    <li>{{burger_name}}</li>
-    {{/each}}
-</ul>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Uneaten Burgers</h4>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <p class="card-text">
+                        {{burger_name}} 
+                        <button class="eatBurger" data-id="{{this.id}}">Eat!</button>
+                    </p>
+                    <hr>
+                    {{/unless}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Eaten Burgers</h4>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <p class="card-text">{{burger_name}}</p>
+                    <hr>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
