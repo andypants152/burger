@@ -2,8 +2,6 @@
 
 A simple ORM and MVC implementation using node with express and handlebars; as well as MySQL for data storage.
 
-Check it out live [here](https://vast-meadow-27376.herokuapp.com/)
-
 ## Installing
 
 Once you've cloned the repository, you'll need to install the required node packages listed in packages.json. This is done with a simple npm install command. You'll also need to setup a MySQL database for storing the burgers, and can find a template schema, and seed file in the db folder. Then run node server.js and visit localhost:8080
